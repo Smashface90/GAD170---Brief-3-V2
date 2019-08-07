@@ -4,37 +4,94 @@ using UnityEngine;
 
 public class TiltControls : MonoBehaviour
 {
-    public Vector3 currentRot;
+    public Transform pivot;
+    [Header("Clamping")]
+    public float minHClamp;
+    public float maxHClamp;
+    public float minVClamp;
+    public float maxVClamp;
+    [Header("Angles")]
+    public float vAngle;
+    public float hAngle;
+    [Space]
+    public float sens;
+    [Header("Control")]
+    public bool keyboardOn;
+    [Header("Pause Menu")]
+    public GameObject pauseMenu;
+    public bool paused;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pauseMenu.SetActive(false);
+        Cursor.visible = false;
+        paused = false;
+
+        if (keyboardOn)
+        {
+            sens = 50f;
+        }
+        else
+        {
+            sens = 20f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentRot = GetComponent<Transform> ().eulerAngles;
+        PlayerInput();
 
-        if ((Input.GetAxis ("Horizontal") > .2) && (currentRot.z <=20 || currentRot.z >=338))
+        PauseFunction();
+    }
+
+    void PlayerInput()
+    {
+        if (keyboardOn)
         {
-            transform.Rotate (0, 0, 1); 
+            vAngle += Input.GetAxis("Vertical") * Time.deltaTime * sens;
+            hAngle += Input.GetAxis("Horizontal") * Time.deltaTime * sens;
+        }
+        else
+        {
+            vAngle += Input.GetAxis("Mouse Y") * Time.deltaTime * sens;
+            hAngle += Input.GetAxis("Mouse X") * Time.deltaTime * sens;
         }
 
-        if ((Input.GetAxis ("Horizontal") < -.2) && (currentRot.z >=339 || currentRot.z <=21))
+        vAngle = Mathf.Clamp(vAngle, minVClamp, maxVClamp);
+        hAngle = Mathf.Clamp(hAngle, minHClamp, maxHClamp);
+
+        transform.rotation = Quaternion.Euler(vAngle, 0, hAngle);
+
+    }
+
+    void PauseFunction()
+    {
+        if (Input.GetButtonDown("Cancel") && !paused)
         {
-            transform.Rotate(0, 0, -1);
+            paused = true;
+           
+        }
+        else if (Input.GetButtonDown("Cancel") && paused)
+        {
+            paused = false;
+            
         }
 
-        if ((Input.GetAxis("Vertical") > .2) && (currentRot.x <=20 || currentRot.x >=338))
+        if (paused)
         {
-            transform.Rotate(1, 0, 0);
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+            Cursor.visible = true;
         }
-
-        if ((Input.GetAxis("Vertical") < -.2) && (currentRot.x >=339 || currentRot.x <=21))
+        if (!paused)
         {
-            transform.Rotate(-1, 0, 0);
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
+            Cursor.visible = false;
         }
     }
+
+    
 }
