@@ -17,16 +17,16 @@ public class TiltControls : MonoBehaviour
     public float sens;
     [Header("Control")]
     public bool keyboardOn;
-    [Header("Pause Menu")]
-    public GameObject pauseMenu;
-    public bool paused;
+    //[Header("Pause Menu")]
+    //public GameObject pauseMenu;
+    //public bool paused;
 
     // Start is called before the first frame update
     void Start()
     {
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
         Cursor.visible = false;
-        paused = false;
+       // paused = false;
 
         if (keyboardOn)
         {
@@ -43,7 +43,7 @@ public class TiltControls : MonoBehaviour
     {
         PlayerInput();
 
-        PauseFunction();
+       // PauseFunction();
     }
 
     void PlayerInput()
@@ -66,7 +66,7 @@ public class TiltControls : MonoBehaviour
 
     }
 
-    void PauseFunction()
+   /* void PauseFunction()
     {
         if (Input.GetButtonDown("Cancel") && !paused)
         {
@@ -91,7 +91,7 @@ public class TiltControls : MonoBehaviour
             pauseMenu.SetActive(false);
             Cursor.visible = false;
         }
-    }
+    } */
 
     
 }
