@@ -17,17 +17,10 @@ public class TiltControls : MonoBehaviour
     public float sens;
     [Header("Control")]
     public bool keyboardOn;
-    //[Header("Pause Menu")]
-    //public GameObject pauseMenu;
-    //public bool paused;
 
-    // Start is called before the first frame update
+    //Default sens settings 
     void Start()
     {
-        //pauseMenu.SetActive(false);
-        Cursor.visible = false;
-       // paused = false;
-
         if (keyboardOn)
         {
             sens = 50f;
@@ -38,14 +31,13 @@ public class TiltControls : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         PlayerInput();
-
-       // PauseFunction();
     }
 
+    //What moves the board
     void PlayerInput()
     {
         if (keyboardOn)
@@ -58,40 +50,12 @@ public class TiltControls : MonoBehaviour
             vAngle += Input.GetAxis("Mouse Y") * Time.deltaTime * sens;
             hAngle += Input.GetAxis("Mouse X") * Time.deltaTime * sens;
         }
-
+        
+        //What limits the tilt. Clamps to -20f, 20f or whatever you want to set it in the inspector
         vAngle = Mathf.Clamp(vAngle, minVClamp, maxVClamp);
         hAngle = Mathf.Clamp(hAngle, minHClamp, maxHClamp);
 
         transform.rotation = Quaternion.Euler(vAngle, 0, hAngle);
 
-    }
-
-   /* void PauseFunction()
-    {
-        if (Input.GetButtonDown("Cancel") && !paused)
-        {
-            paused = true;
-           
-        }
-        else if (Input.GetButtonDown("Cancel") && paused)
-        {
-            paused = false;
-            
-        }
-
-        if (paused)
-        {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-            Cursor.visible = true;
-        }
-        if (!paused)
-        {
-            Time.timeScale = 1;
-            pauseMenu.SetActive(false);
-            Cursor.visible = false;
-        }
-    } */
-
-    
+    }     
 }
