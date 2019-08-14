@@ -18,6 +18,7 @@ public class WarpEnd : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        Camera.main.GetComponent<PauseScript>().menuDisabled = true;
         Time.timeScale = 0;
         GratsUI.SetActive(true);
         Cursor.visible = true;

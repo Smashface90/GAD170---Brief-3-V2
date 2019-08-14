@@ -931,6 +931,7 @@ MonoBehaviour:
   hAngle: 0
   sens: 0
   keyboardOn: 0
+  mySlider: {fileID: 1696139855}
 --- !u!4 &1127486915
 Transform:
   m_ObjectHideFlags: 0
@@ -1621,12 +1622,12 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1127486913}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1127486914}
+        m_MethodName: SetSensitivity
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1796,13 +1797,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 1044866874}
   m_HandleRect: {fileID: 1808192269}
   m_Direction: 0
-  m_MinValue: 30
+  m_MinValue: 0
   m_MaxValue: 30
   m_WholeNumbers: 1
-  m_Value: 30
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1127486914}
+        m_MethodName: SensitivityControl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1808192268

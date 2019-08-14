@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5585322, g: 0.57096875, b: 0.53543943, a: 1}
+  m_IndirectSpecularColor: {r: 0.48732203, g: 0.5060545, b: 0.4497711, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5197,7 +5197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GratsUI: {fileID: 751116634}
-  pauseMenu: {fileID: 483667820}
 --- !u!1 &751116634
 GameObject:
   m_ObjectHideFlags: 0
@@ -6719,6 +6718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 483667820}
   paused: 0
+  menuDisabled: 0
 --- !u!1 &977339742
 GameObject:
   m_ObjectHideFlags: 0
@@ -9720,6 +9720,7 @@ MonoBehaviour:
   hAngle: 0
   sens: 0
   keyboardOn: 0
+  mySlider: {fileID: 0}
 --- !u!1 &1357116073
 GameObject:
   m_ObjectHideFlags: 0

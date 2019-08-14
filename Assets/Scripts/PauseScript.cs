@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour
     [Header("Pause Menu")]
     public GameObject pauseMenu;
     public bool paused;
+    public bool menuDisabled =false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,12 @@ public class PauseScript : MonoBehaviour
 
     void PauseFunction()
    {
+
+        if (menuDisabled)
+        {
+            return;
+        }
+
         if (Input.GetButtonDown("Cancel") && !paused)
         {
             paused = true;
