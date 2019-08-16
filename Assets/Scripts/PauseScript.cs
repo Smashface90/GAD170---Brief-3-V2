@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿//Evan Waters 1017144 T1 GAD 170
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
+    //shown in inspector 
     [Header("Pause Menu")]
     public GameObject pauseMenu;
     public bool paused;
@@ -12,6 +15,7 @@ public class PauseScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //turns cursor and pause menu off at start
         Cursor.visible = false;
         pauseMenu.SetActive(false);
         paused = false;
@@ -30,7 +34,7 @@ public class PauseScript : MonoBehaviour
         {
             return;
         }
-
+        //if ESC is pressed, do the following
         if (Input.GetButtonDown("Cancel") && !paused)
         {
             paused = true;
@@ -43,7 +47,7 @@ public class PauseScript : MonoBehaviour
             Debug.Log ("Unpaused");
 
        }
-
+        //if paused, turn cursor on and show the pause menu. also stopping the time of the game
        if (paused)
        {
            Time.timeScale = 0;

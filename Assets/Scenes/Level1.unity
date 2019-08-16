@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1463685718}
-  m_IndirectSpecularColor: {r: 0.5585322, g: 0.57096875, b: 0.53543943, a: 1}
+  m_IndirectSpecularColor: {r: 0.48732203, g: 0.5060545, b: 0.4497711, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1826,15 +1826,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d471af2e49e954a9cc5d2aade23fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {fileID: 733345367}
   minHClamp: -20
   maxHClamp: 20
   minVClamp: -20
   maxVClamp: 20
   vAngle: 0
   hAngle: 0
-  sens: 0
+  pivot: {fileID: 733345367}
   keyboardOn: 0
+  kbInt: 0
+  mySlider: {fileID: 0}
+  sens: 0
 --- !u!54 &733345363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1970,6 +1972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 327101133}
   paused: 0
+  menuDisabled: 0
 --- !u!81 &834820970
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2621,7 +2624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -112.75}
+  m_AnchoredPosition: {x: 0, y: -78}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380835307
@@ -3636,7 +3639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -43}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095188855

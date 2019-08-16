@@ -922,16 +922,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d471af2e49e954a9cc5d2aade23fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {fileID: 0}
   minHClamp: 0
   maxHClamp: 0
   minVClamp: 0
   maxVClamp: 0
   vAngle: 0
   hAngle: 0
-  sens: 0
+  pivot: {fileID: 0}
   keyboardOn: 0
+  kbInt: 1
   mySlider: {fileID: 1696139855}
+  sens: 0
 --- !u!4 &1127486915
 Transform:
   m_ObjectHideFlags: 0
